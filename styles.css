@@ -1,0 +1,199 @@
+body{
+display: flex;
+flex-direction: column;
+align-items:center;
+justify-content: center;
+height: 100vh;
+font-family: 'Kumbh Sans', sans-serif;
+font-size: 12px;
+font-weight: 400;
+background-color: #8000e9;
+background-image: linear-gradient(342deg, #8000e9 0%, #6565e7 100%);
+color: hsl(237, 12%, 33%);
+background-repeat: no-repeat;
+}
+
+h1{
+  font-size:32px;
+  font-weight: 700;
+}
+
+h2{
+  font-weight: 400;
+  font-size:14px;
+}
+
+p{
+  color:gray;
+  padding:3px 0;
+  line-height: 20px;
+}
+
+#ContentContainer{
+  background: #fff;
+  padding:66px 100px;
+  width:720px;
+  height: 350px;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+/* Image Section */
+
+  #ImageSection{
+    flex:1;
+    align-items: flex-start;
+    position: relative;
+    margin-right:100px;
+  }
+
+  #BackgroundLayer{
+    width:100%;
+    position: absolute;
+    transform: translate(-59%, -8%);
+  }
+
+  #BackgroundLayerMobile{
+    display: none;
+  }
+
+  #BoxBg{
+  top: 50%;
+  transform: translate(-45%, -25%);
+  z-index: 2;
+  position: absolute;
+  }
+
+  #Woman{
+    top: 0%;
+    left: 100%;
+    transform: translate(-71%, -53%);
+    z-index: 1;
+    position: absolute;
+  }
+
+  #WomanMobile{
+    display: none;
+  }
+
+  /* Question Section */
+  #QuestionsSection{
+    flex:2;
+  }
+
+  #QuestionContainer{
+    width:350px;
+    margin:20px 0px 0px 100px;
+  }
+
+  .QandA{
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+  }
+
+  .Question {
+  cursor: pointer;
+  width: 100%;
+  transition: 0.4s;
+  position: relative;
+  top: 10px;
+  }
+
+  .Question.active{
+    font-weight: 700;
+  }
+
+  .Answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  position: relative;
+  }
+
+  .Question:after {
+  content: '\2304'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color:hsl(14, 88%, 65%);
+  font-weight: bold;
+  font-size:14px;
+  float: right;
+  margin-left: 5px;
+  }
+
+.active:after {
+  content: "\2303"; /* Unicode character for "minus" sign (-) */
+  color:hsl(14, 88%, 65%);
+  font-weight: bold;
+  font-size:14px;
+  }
+
+  /* mobile styles */
+
+  @media only screen and (max-width: 880px) {
+
+    h1{
+      text-align: center;
+    }
+
+    #MainContainer{
+      padding-bottom: 150px;
+    }
+
+    #ContentContainer{
+      background: #fff;
+      padding:0px;
+      width:380px;
+      height: 75%;
+      display: flex;
+      flex-direction: column;
+      align-items:center;
+      justify-content: center;
+      position: relative;
+      border-radius: 15px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      background-repeat: no-repeat;
+      z-index: 1;
+    }
+
+    #Woman{
+      display: none;
+    }
+
+    #BoxBg{
+      display: none;
+    }
+
+    #BackgroundLayer{
+      display: none;
+    }
+
+    #BackgroundLayerMobile{
+      display: block;
+      position: relative;
+      top: 2px;
+      width: 300px;
+    }
+
+    #WomanMobile{
+      display: block;
+      position: relative;
+      z-index: 2;
+      top: 95px;
+      margin: 0 AUTO;
+      width: 330px;
+
+    }
+
+    #ImageSection{
+      display: none;
+    }
+
+    #QuestionContainer{
+      margin:0px;
+    }
+  }

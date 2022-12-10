@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+  </style>
+</head>
+<body>
+<div id="MainContainer" role="main">
+  <img id="WomanMobile" src="images/illustration-woman-online-mobile.svg" slt="image">
+  <img id="BoxBg" src="images/illustration-box-desktop.svg" alt="box image">
+  <div id="ContentContainer">
+    <img id="BackgroundLayer" src="images/bg-pattern-desktop.svg" alt="box image">
+    <img id="BackgroundLayerMobile" src="images/bg-pattern-mobile.svg" alt="box image">
+    <div id="ImageSection">
+      <img id="Woman" src="images/illustration-woman-online-desktop.svg" alt="Image">
+    </div>
+    <div id="QuestionsSection">
+      <div id="QuestionContainer">
+        <h1>FAQ</h1>
+        <div class="QandA">
+        <h2 class="Question">How many team members can I invite?</h2>
+        <p class="Answer">You can invite up to 2 additional users on the Free plan. There is no limit on
+        team members for the Premium plan.</p>
+        </div>
+        <div class="QandA">
+        <h2 class="Question">What is the maximum file upload size?</h2>
+        <p class="Answer">No more than 2GB. All files in your account must fit your allotted storage space.</p>
+        </div>
+        <div class="QandA">
+        <h2 class="Question">How do I reset my password?</h2>
+        <p class="Answer">Click “Forgot password” from the login page or “Change password” from your profile page.
+        A reset link will be emailed to you.</p>
+        </div>
+        <div class="QandA">
+        <h2 class="Question">Can I cancel my subscription?</h2>
+        <p class="Answer">Yes! Send us a message and we’ll process your request no questions asked.</p>
+        </div>
+        <div class="QandA">
+        <h2 class="Question">Do you provide additional support?</h2>
+        <p class="Answer">Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+
+// Get all Accordion and Panel
+let accHeading = document.querySelectorAll(".Question");
+let accPanel = document.querySelectorAll(".Answer");
+
+for (let i = 0; i < accHeading.length; i++) {
+    // Execute whenever an accordion is clicked
+    accHeading[i].onclick = function() {
+        if (this.nextElementSibling.style.maxHeight) {
+           hidePanels();     // Hide All open Panels
+        } else {
+           showPanel(this);  // Show the panel
+        }
+    };
+}
+
+// Function to Show a Panel
+function showPanel(elem) {
+  hidePanels();
+  elem.classList.add("active");
+  elem.nextElementSibling.style.maxHeight = elem.nextElementSibling.scrollHeight + "px";
+}
+
+// Function to Hide all shown Panels
+function hidePanels() {
+  for (let i = 0; i < accPanel.length; i++) {
+      accPanel[i].style.maxHeight = null;
+      accHeading[i].classList.remove("active");
+  }
+}
+
+</script>
+
+</body>
+</html>
